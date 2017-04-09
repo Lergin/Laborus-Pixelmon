@@ -1,7 +1,7 @@
 package de.lergin.laboruspixelmon.actions;
 
 import com.google.common.collect.ImmutableList;
-import com.pixelmonmod.pixelmon.api.events.CaptureEvent;
+import com.pixelmonmod.pixelmon.api.events.LevelUpEvent;
 import de.lergin.laborus.api.JobAction;
 import de.lergin.laborus.api.JobActionState;
 import de.lergin.laboruspixelmon.items.PixelmonJobItem;
@@ -12,15 +12,15 @@ import org.spongepowered.api.entity.living.player.Player;
 import java.util.List;
 
 @ConfigSerializable
-public class CatchJobAction extends JobAction<PixelmonJobItem> {
-    public CatchJobAction() {}
+public class LevelUpJobAction extends JobAction<PixelmonJobItem> {
+    public LevelUpJobAction() {}
 
     @Setting(value = "items")
     private List<PixelmonJobItem> jobItems = ImmutableList.of();
 
     @Override
     public String getId() {
-        return "PIXELMON_CATCH";
+        return "PIXELMON_LEVELUP";
     }
 
     @Override
@@ -28,7 +28,7 @@ public class CatchJobAction extends JobAction<PixelmonJobItem> {
         return jobItems;
     }
 
-    public void onEvent(CaptureEvent event) throws Exception {
+    public void onEvent(LevelUpEvent event) throws Exception {
         JobActionState state = super.onEvent((Player) event.player, ()->true, ()->
                 new PixelmonJobItem(event.pokemon.baseStats.pokemon));
 

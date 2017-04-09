@@ -3,6 +3,8 @@ package de.lergin.laboruspixelmon;
 import com.google.inject.Inject;
 import de.lergin.laborus.api.JobService;
 import de.lergin.laboruspixelmon.actions.CatchJobAction;
+import de.lergin.laboruspixelmon.actions.EvolveJobAction;
+import de.lergin.laboruspixelmon.actions.PokeballThrowJobAction;
 import org.slf4j.Logger;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.event.Listener;
@@ -40,6 +42,8 @@ public class Laboruspixelmon {
 
         JobService service = optional.get();
 
-        service.registerJobAction(CatchJobAction.class, "catch_pixelmon");
+        service.registerJobAction(CatchJobAction.class, "pixelmon_catch");
+        service.registerJobAction(EvolveJobAction.class, "pixelmon_evolve");
+        service.registerJobAction(PokeballThrowJobAction.class, "pixelmon_throw");
     }
 }
