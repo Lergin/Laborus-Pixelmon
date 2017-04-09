@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "laboruspixelmon",
+    "name": "Laboruspixelmon",
+    "description": "A extenision to Laborus to add support for Pixelmon specific stuff",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "Lergin"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
