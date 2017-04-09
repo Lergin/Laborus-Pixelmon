@@ -2,17 +2,15 @@ package de.lergin.laboruspixelmon.actions;
 
 import com.google.common.collect.ImmutableList;
 import com.pixelmonmod.pixelmon.api.events.CaptureEvent;
-import de.lergin.laborus.api.JobAction;
-import de.lergin.laborus.api.JobActionState;
+import de.lergin.laboruspixelmon.PixelmonJobAction;
 import de.lergin.laboruspixelmon.items.PixelmonJobItem;
 import ninja.leaping.configurate.objectmapping.Setting;
 import ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable;
-import org.spongepowered.api.entity.living.player.Player;
 
 import java.util.List;
 
 @ConfigSerializable
-public class CatchJobAction extends JobAction<PixelmonJobItem> {
+public class CatchJobAction extends PixelmonJobAction<PixelmonJobItem> {
     public CatchJobAction() {}
 
     @Setting(value = "items")
@@ -29,11 +27,6 @@ public class CatchJobAction extends JobAction<PixelmonJobItem> {
     }
 
     public void onEvent(CaptureEvent event) throws Exception {
-        JobActionState state = super.onEvent((Player) event.player, ()->true, ()->
-                new PixelmonJobItem(event.pokemon.baseStats.pokemon));
-
-        if(state == JobActionState.BLOCK || state == JobActionState.BLOCK_OTHER){
-            event.setCanceled(true);
-        }
+        super.onEvent(event, event.player, ()->true, ()-> new PixelmonJobItem(event.pokemon.baseStats.pokemon));
     }
 }

@@ -2,6 +2,7 @@ package de.lergin.laboruspixelmon;
 
 import com.google.inject.Inject;
 import com.pixelmonmod.pixelmon.api.events.LevelUpEvent;
+import de.lergin.laborus.Laborus;
 import de.lergin.laborus.api.JobService;
 import de.lergin.laboruspixelmon.actions.CatchJobAction;
 import de.lergin.laboruspixelmon.actions.EvolveJobAction;
@@ -11,7 +12,9 @@ import org.slf4j.Logger;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.event.Listener;
 import org.spongepowered.api.event.game.state.GamePreInitializationEvent;
+import org.spongepowered.api.plugin.Dependency;
 import org.spongepowered.api.plugin.Plugin;
+import org.spongepowered.api.plugin.PluginManager;
 
 import java.util.Optional;
 
@@ -21,9 +24,12 @@ import java.util.Optional;
         description = "A extenision to Laborus to add support for Pixelmon specific stuff",
         authors = {
                 "Lergin"
+        },
+        dependencies = {
+                @Dependency(id = "laborus")
         }
 )
-public class Laboruspixelmon {
+public class LaborusPixelmon {
     @Inject
     private Logger logger;
 
