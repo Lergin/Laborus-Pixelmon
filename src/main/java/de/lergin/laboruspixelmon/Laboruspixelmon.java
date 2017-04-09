@@ -1,9 +1,11 @@
 package de.lergin.laboruspixelmon;
 
 import com.google.inject.Inject;
+import com.pixelmonmod.pixelmon.api.events.LevelUpEvent;
 import de.lergin.laborus.api.JobService;
 import de.lergin.laboruspixelmon.actions.CatchJobAction;
 import de.lergin.laboruspixelmon.actions.EvolveJobAction;
+import de.lergin.laboruspixelmon.actions.LevelUpJobAction;
 import de.lergin.laboruspixelmon.actions.PokeballThrowJobAction;
 import org.slf4j.Logger;
 import org.spongepowered.api.Sponge;
@@ -45,5 +47,6 @@ public class Laboruspixelmon {
         service.registerJobAction(CatchJobAction.class, "pixelmon_catch");
         service.registerJobAction(EvolveJobAction.class, "pixelmon_evolve");
         service.registerJobAction(PokeballThrowJobAction.class, "pixelmon_throw");
+        service.registerJobAction(LevelUpJobAction.class, "pixelmon_levelup");
     }
 }
