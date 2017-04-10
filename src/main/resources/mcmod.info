@@ -13,6 +13,10 @@
     "credits": "",
     "logoFile": "",
     "screenshots": [],
-    "dependencies": []
+    "requiredMods": [
+      "spongeapi@5.1.0",
+      "laborus",
+      "pixelmon"
+    ]
   }
 ]
