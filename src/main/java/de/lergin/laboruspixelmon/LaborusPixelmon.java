@@ -2,7 +2,6 @@ package de.lergin.laboruspixelmon;
 
 import com.google.common.reflect.TypeToken;
 import com.google.inject.Inject;
-import de.lergin.laborus.*;
 import de.lergin.laborus.api.JobService;
 import de.lergin.laboruspixelmon.actions.*;
 import ninja.leaping.configurate.objectmapping.serialize.TypeSerializers;
@@ -16,7 +15,7 @@ import org.spongepowered.api.plugin.Plugin;
 import java.util.Optional;
 
 @Plugin(
-        id = "laboruspixelmon",
+        id = "laborus-pixelmon",
         name = "Laborus - Pixelmon",
         description = "An extension to Laborus to add support for Pixelmon specific stuff",
         authors = {

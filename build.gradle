@@ -18,9 +18,9 @@ buildscript {
 apply plugin: "net.minecraftforge.gradle.forge"
 apply plugin: "org.spongepowered.plugin"
 
-version = modVersion
+version = "1.0.0"
 group = modGroup
-archivesBaseName = modBaseName
+archivesBaseName = "Laborus-Pixelmon"
 
 minecraft {
     version = project.forgeVersion

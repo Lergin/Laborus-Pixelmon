@@ -1,6 +1,6 @@
 [
   {
-    "modid": "laboruspixelmon",
+    "modid": "laborus-pixelmon",
     "name": "Laborus Pixelmon",
     "description": "A extenision to Laborus to add support for Pixelmon specific stuff",
     "version": "${version}",
