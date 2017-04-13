@@ -56,5 +56,6 @@ public class LaborusPixelmon {
         service.registerJobAction(EvolveJobAction.class, "pixelmon_evolve");
         service.registerJobAction(PokeballThrowJobAction.class, "pixelmon_throw");
         service.registerJobAction(LevelUpJobAction.class, "pixelmon_levelup");
+        service.registerJobAction(AnvilJobAction.class, "pixelmon_anvil");
     }
 }

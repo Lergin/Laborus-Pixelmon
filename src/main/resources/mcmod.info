@@ -2,7 +2,7 @@
   {
     "modid": "laborus-pixelmon",
     "name": "Laborus Pixelmon",
-    "description": "A extenision to Laborus to add support for Pixelmon specific stuff",
+    "description": "An extension to Laborus to add support for Pixelmon specific stuff",
     "version": "${version}",
     "mcversion": "${mcversion}",
     "url": "https://github.com/Lergin/Laborus-Pixelmon",
@@ -16,7 +16,8 @@
     "requiredMods": [
       "spongeapi@5.1.0",
       "laborus@1.4.1",
-      "pixelmon@5.0.3"
+      "pixelmon@5.0.3",
+      "Forge"
     ]
   }
 ]
