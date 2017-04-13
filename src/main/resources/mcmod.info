@@ -15,8 +15,8 @@
     "screenshots": [],
     "requiredMods": [
       "spongeapi@5.1.0",
-      "laborus",
-      "pixelmon"
+      "laborus@1.4.1",
+      "pixelmon@5.0.3"
     ]
   }
 ]
