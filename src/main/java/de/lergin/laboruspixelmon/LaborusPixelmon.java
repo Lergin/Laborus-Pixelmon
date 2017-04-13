@@ -2,6 +2,7 @@ package de.lergin.laboruspixelmon;
 
 import com.google.common.reflect.TypeToken;
 import com.google.inject.Inject;
+import de.lergin.laborus.*;
 import de.lergin.laborus.api.JobService;
 import de.lergin.laboruspixelmon.actions.*;
 import ninja.leaping.configurate.objectmapping.serialize.TypeSerializers;
@@ -29,6 +30,8 @@ public class LaborusPixelmon {
     @Inject
     private Logger logger;
 
+    @Inject
+    private Metrics metrics;
 
     @Listener
     public void onGamePreInitialization(GamePreInitializationEvent event) {
