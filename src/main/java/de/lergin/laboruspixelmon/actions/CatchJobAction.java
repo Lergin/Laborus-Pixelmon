@@ -10,6 +10,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import ninja.leaping.configurate.objectmapping.Setting;
 import ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable;
+import org.spongepowered.api.entity.living.player.Player;
 
 import java.util.List;
 
@@ -44,6 +45,11 @@ public class CatchJobAction extends PixelmonJobAction<PixelmonJobItem> {
 
     @SubscribeEvent
     public void onEvent(CaptureEvent.SuccessfulCapture event) throws Exception {
-        super.onEvent(event, event.player, ()->true, ()-> new PixelmonJobItem(event.pokemon.baseStats.pokemon));
+        super.onEvent((Player) event.player, ()->true, ()-> new PixelmonJobItem(event.pokemon.baseStats.pokemon));
+    }
+
+    @SubscribeEvent
+    public void onEvent(CaptureEvent.StartCapture event) throws Exception {
+        super.onBlockEvent(event, event.player, ()->true, ()-> new PixelmonJobItem(event.pokemon.baseStats.pokemon));
     }
 }

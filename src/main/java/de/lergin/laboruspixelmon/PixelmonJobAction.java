@@ -10,12 +10,34 @@ import org.spongepowered.api.entity.living.player.Player;
 import java.util.concurrent.Callable;
 import java.util.function.BooleanSupplier;
 
+import static de.lergin.laborus.api.JobActionState.BLOCK;
+
 public abstract class PixelmonJobAction<T extends JobItem> extends JobAction<T> {
-    public void onEvent(Event event, EntityPlayer player, BooleanSupplier isWorking, Callable<T> getJobItem) throws Exception {
+    public JobActionState onEvent(Event event, EntityPlayer player, BooleanSupplier isWorking, Callable<T> getJobItem) throws Exception {
         JobActionState state = super.onEvent((Player) player, isWorking, getJobItem);
 
-        if(state == JobActionState.BLOCK || state == JobActionState.BLOCK_OTHER){
+        if (state == BLOCK){
+            JobItem jobItem = getJobItem.call();
+
+            sendBlockMessage((Player) player, jobItem);
+
             event.setCanceled(true);
         }
+
+        return state;
+    }
+
+    public JobActionState onBlockEvent(Event event, EntityPlayer player, BooleanSupplier isWorking, Callable<T> getJobItem) throws Exception {
+        JobActionState state = super.onBlockEvent((Player) player, isWorking, getJobItem);
+
+        if (state == BLOCK){
+            JobItem jobItem = getJobItem.call();
+
+            sendBlockMessage((Player) player, jobItem);
+
+            event.setCanceled(true);
+        }
+
+        return state;
     }
 }

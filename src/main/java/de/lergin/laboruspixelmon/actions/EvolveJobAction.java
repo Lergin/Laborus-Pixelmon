@@ -9,6 +9,7 @@ import de.lergin.laboruspixelmon.items.PixelmonJobItem;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import ninja.leaping.configurate.objectmapping.Setting;
 import ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable;
+import org.spongepowered.api.entity.living.player.Player;
 
 import java.util.List;
 
@@ -42,7 +43,12 @@ public class EvolveJobAction extends PixelmonJobAction<PixelmonJobItem> {
     }
 
     @SubscribeEvent
-    public void onEvent(EvolveEvent event) throws Exception {
-        super.onEvent(event, event.player, ()->true, ()-> new PixelmonJobItem(event.postEvo));
+    public void onEvent(EvolveEvent.PreEvolve event) throws Exception {
+        super.onBlockEvent(event, event.player, ()->true, ()-> new PixelmonJobItem(event.postEvo));
+    }
+
+    @SubscribeEvent
+    public void onEvent(EvolveEvent.PostEvolve event) throws Exception {
+        super.onEvent((Player) event.player, ()->true, ()-> new PixelmonJobItem(event.postEvo));
     }
 }
