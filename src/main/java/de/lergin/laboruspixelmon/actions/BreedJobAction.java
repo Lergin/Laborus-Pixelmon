@@ -8,9 +8,11 @@ import de.lergin.laboruspixelmon.PixelmonJobAction;
 import de.lergin.laboruspixelmon.items.PixelmonJobItem;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import ninja.leaping.configurate.objectmapping.Setting;
+import ninja.leaping.configurate.objectmapping.serialize.ConfigSerializable;
 
 import java.util.List;
 
+@ConfigSerializable
 public class BreedJobAction extends PixelmonJobAction<PixelmonJobItem> {
     public BreedJobAction() {}
 

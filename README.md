@@ -7,3 +7,5 @@ A extension to [Laborus](https://ore.spongepowered.org/Lergin/Laborus) to add [P
 |pixelmon_evolve |Pokemon Type |
 |pixelmon_throw  |Pokeball Type|
 |pixelmon_levelup|Pokemon Type |
+|pixelmon_anvil  |Item Type    |
+|pixelmon_breed  |Pokemon Type |
